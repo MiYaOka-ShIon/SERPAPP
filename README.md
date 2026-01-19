@@ -67,6 +67,7 @@ docker compose up -d
 # データベースのマイグレーション適用（初回のみ）
 dart bin/main.dart --apply-migrations
 ```
+エラーが出ると思います。モック作成がメインの場合は無視で構いません
 
 5. Flutterアプリの実行
 ```powershell
