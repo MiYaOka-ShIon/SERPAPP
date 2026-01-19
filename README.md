@@ -10,7 +10,7 @@
 - **Docker Desktop**
 - **Serverpod CLI** (`dart pub global activate serverpod_cli`)
 - **Windows 開発者モード** (Windows設定 > システム > 開発者向け > 開発者モードをON)
-
+- **環境変数の追加** C:\Users\・・・\flutter\bin と　C:\Users\・・・\AppData\Local\Pub\Cache\bin　を追加する
 ---
 
 ## 🚀 立ち上げ手順
