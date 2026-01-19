@@ -32,16 +32,16 @@ flutter pub get
 ```
 
 ### 2. パスワード設定(無視でお願いします)
-セキュリティのためパスワードファイルはGit管理外です。以下のファイルを作成してください。
+~~セキュリティのためパスワードファイルはGit管理外です。以下のファイルを作成してください。~~
 
-ファイルパス: my_project_server/config/passwords.yaml
+~~ファイルパス: my_project_server/config/passwords.yaml~~
 
 内容例:
 
 YAML
 
  開発用データベースのパスワード
-database: password
+~~database: password~~
 
  Redisのパスワード（デフォルトは空でOK）
 redis: 
