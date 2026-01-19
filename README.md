@@ -1,6 +1,6 @@
 # My Project (Serverpod & Flutter)
 
-このプロジェクトは、**Serverpod**（バックエンド）と **Flutter Desktop**（フロントエンド）で構成された、API管理システムです。
+このプロジェクトは、**Serverpod**（バックエンド）と **Flutter Desktop**（フロントエンド）で構成されたシステムです。
 
 ## ⚙️ 事前準備
 プロジェクトを動かす前に、開発環境に以下のツールがインストールされていることを確認してください。
@@ -75,7 +75,7 @@ cd ../my_project_flutter
 flutter run -d windows
 ```
 
-🛠 開発ルール
+## 🛠 開発ルール
 # モデルの変更: 
   my_project_server/lib/src/protocol/ 内の .yaml ファイルを変更した後は、必ず serverpod generate を実行してください。
 
@@ -100,7 +100,7 @@ Database connection refused: Docker Desktopが起動しているか、developmen
 
 ---
 
-### 5. GitHubへの反映コマンド (これをターミナルで実行してください)
+~~### 5. GitHubへの反映コマンド (これをターミナルで実行してください)~~(無視でお願いします_2)
 
 ```powershell
 git add README.md
