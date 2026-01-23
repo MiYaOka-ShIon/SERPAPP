@@ -27,6 +27,7 @@ dependencies:
   cupertino_icons: ^1.0.5
   flutter:
     sdk: flutter
+  window_manager: ^0.3.8
   my_project_client:
     path: ../my_project_client
   serverpod_auth_idp_flutter: 3.2.2
