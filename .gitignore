@@ -1,0 +1,38 @@
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+*.log
+*.tmp
+*.lock
+*.bat
+
+# Platforms (generated)
+android/
+ios/
+macos/
+linux/
+
+# Windows Flutter generated
+windows/flutter/ephemeral/
+windows/flutter/*.dll
+windows/flutter/*.pdb
+windows/flutter/*.lib
+windows/flutter/*.exp
+windows/flutter/icudtl.dat
+windows/flutter/.plugin_symlinks/
+
+# CMake build
+**/build/
