@@ -1,6 +1,6 @@
 # My Project (Serverpod & Flutter)
 
-このプロジェクトは、**Serverpod**（バックエンド）と **Flutter Desktop**（フロントエンド）で構成された、API管理システムです。
+このプロジェクトは、**Serverpod**（バックエンド）と **Flutter Desktop**（フロントエンド）で構成されたシステムです。
 
 ## ⚙️ 事前準備
 プロジェクトを動かす前に、開発環境に以下のツールがインストールされていることを確認してください。
@@ -10,7 +10,7 @@
 - **Docker Desktop**
 - **Serverpod CLI** (`dart pub global activate serverpod_cli`)
 - **Windows 開発者モード** (Windows設定 > システム > 開発者向け > 開発者モードをON)
-
+- **環境変数の追加** C:\Users\・・・\flutter\bin と　C:\Users\・・・\AppData\Local\Pub\Cache\bin　を追加する
 ---
 
 ## 🚀 立ち上げ手順
@@ -32,16 +32,16 @@ flutter pub get
 ```
 
 ### 2. パスワード設定(無視でお願いします)
-セキュリティのためパスワードファイルはGit管理外です。以下のファイルを作成してください。
+~~セキュリティのためパスワードファイルはGit管理外です。以下のファイルを作成してください。~~
 
-ファイルパス: my_project_server/config/passwords.yaml
+~~ファイルパス: my_project_server/config/passwords.yaml~~
 
 内容例:
 
 YAML
 
  開発用データベースのパスワード
-database: password
+~~database: password~~
 
  Redisのパスワード（デフォルトは空でOK）
 redis: 
@@ -67,6 +67,7 @@ docker compose up -d
 # データベースのマイグレーション適用（初回のみ）
 dart bin/main.dart --apply-migrations
 ```
+エラーが出ると思います。モック作成がメインの場合は無視で構いません
 
 5. Flutterアプリの実行
 ```powershell
@@ -75,7 +76,7 @@ cd ../my_project_flutter
 flutter run -d windows
 ```
 
-🛠 開発ルール
+## 🛠 開発ルール
 # モデルの変更: 
   my_project_server/lib/src/protocol/ 内の .yaml ファイルを変更した後は、必ず serverpod generate を実行してください。
 
@@ -100,7 +101,7 @@ Database connection refused: Docker Desktopが起動しているか、developmen
 
 ---
 
-### 5. GitHubへの反映コマンド (これをターミナルで実行してください)
+~~### 5. GitHubへの反映コマンド (これをターミナルで実行してください)~~(無視でお願いします_2)
 
 ```powershell
 git add README.md
