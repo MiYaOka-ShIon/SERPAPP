@@ -14,11 +14,11 @@ void main() async {
 
   // ★ ウィンドウ固定設定
   const windowOptions = WindowOptions(
-    size: Size(1920, 1280),
-    minimumSize: Size(1920, 1280),
+    size: Size(1020, 1280),
+    minimumSize: Size(1020, 1280),
     maximumSize: Size(1920, 1280),
     center: true,
-    title: 'My App',
+    title: 'オフィスいずこ',
   );
 
   windowManager.waitUntilReadyToShow(windowOptions, () async {

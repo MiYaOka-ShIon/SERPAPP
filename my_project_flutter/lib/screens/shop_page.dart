@@ -92,12 +92,42 @@ class _ShopPageState extends State<ShopPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF9FAFB), // bg-gray-50
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
-        title: const Text('', style: TextStyle(color: Colors.black)),
+      appBar: PreferredSize(
+        preferredSize: Size.zero,
+        child: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+        ),
       ),
-      body: Padding(
+    body: Column(
+      children: [
+        // ===== 追加するヘッダー =====
+        Container(
+          height: 40,
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            border: Border(
+              bottom: BorderSide(color: Color(0xFFE5E7EB)),
+            ),
+          ),
+          child: Row(
+            children: [
+              const Spacer(),
+              Text(
+                '$userName：$userCoins コイン',
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
+        ),
+
+    // ===== 既存の画面 =====
+    Expanded(
+      child: Padding(
         padding: const EdgeInsets.all(16),
         child: LayoutBuilder(
           builder: (context, constraints) {
@@ -114,7 +144,7 @@ class _ShopPageState extends State<ShopPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'お菓子選択エリア',
+                        'マーケット',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -185,15 +215,15 @@ class _ShopPageState extends State<ShopPage> {
                               width: double.infinity,
                               child: ElevatedButton(
                                 onPressed: () {},
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 12),
-                                  child: Text('購入ボタン'),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color.fromARGB(255, 51, 41, 197), // ← ボタン色
+                                  foregroundColor: Colors.white, // ← 文字色
+                                  padding: const EdgeInsets.symmetric(vertical: 12),
                                 ),
+                                child: const Text('購入ボタン'),
                               ),
                             ),
                             const SizedBox(height: 8),
-                            _infoRow(
-                                '現在の残高', '$userCoins コイン'),
                             _infoRow(
                                 '合計', '${getTotalPrice()} コイン'),
                             _infoRow(
@@ -272,6 +302,9 @@ class _ShopPageState extends State<ShopPage> {
           },
         ),
       ),
+    ),
+      ],
+    ),
     );
   }
 
