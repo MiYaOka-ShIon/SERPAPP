@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_project_client/my_project_client.dart';
+import 'package:my_project_flutter/screens/login_in_screen.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 import 'package:serverpod_auth_idp_flutter/serverpod_auth_idp_flutter.dart';
 import 'package:window_manager/window_manager.dart';
@@ -25,7 +26,7 @@ void main() async {
     await windowManager.show();
     await windowManager.focus();
   });
-
+  
   final serverUrl = await getServerUrl();
 
   client = Client(serverUrl)
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const ShopPage(),
+      home: const LoginPage(),//最初に表示する画面を設定
     );
   }
 }
