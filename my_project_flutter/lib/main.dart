@@ -5,7 +5,6 @@ import 'package:serverpod_flutter/serverpod_flutter.dart';
 import 'package:serverpod_auth_idp_flutter/serverpod_auth_idp_flutter.dart';
 import 'package:window_manager/window_manager.dart';
 
-import 'screens/shop_page.dart'; // ← 遷移先
 
 late final Client client;
 
