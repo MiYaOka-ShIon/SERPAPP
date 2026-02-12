@@ -10,8 +10,6 @@ Future<String> getAccessTokenFromMicrosoft() async {
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
   
-  get AuthService => null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,24 +17,24 @@ class LoginPage extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () async {
             try {
-              // ① Microsoft 認証（今はダミー）
-              final accessToken = await getAccessTokenFromMicrosoft();
+              final auth = WindowsEntraAuthService();
 
-              // ② Flask にトークン送信
-              final user =
-                  await AuthService.authenticateWithBackend(accessToken);
+              final accessToken = await auth.login();
 
-              // ③ 成功したら画面遷移
+              debugPrint("TOKEN取得成功");
+
+              if (!context.mounted) return;
+
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (_) => const ShopPage(),
                 ),
               );
-
-              // デバッグ用
-              debugPrint(user.toString());
             } catch (e) {
-              debugPrint(e.toString());
+              debugPrint("ログインエラー: $e");
+
+              if (!context.mounted) return;
+
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('ログイン失敗')),
               );
