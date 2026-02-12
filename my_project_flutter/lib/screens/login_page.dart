@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:my_project_flutter/screens/shop_page.dart';
 import 'package:my_project_flutter/auth/auth_service.dart';
 
-// 仮：MSAL等で取得した access_token をここに渡す想定
 Future<String> getAccessTokenFromMicrosoft() async {
-  // ※ ここは次のステップで実装
-  throw UnimplementedError();
+  final auth = WindowsEntraAuthService();
+  return await auth.login();
 }
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+  
+  get AuthService => null;
 
   @override
   Widget build(BuildContext context) {
